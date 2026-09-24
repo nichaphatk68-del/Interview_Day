@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1. ภาพพื้นหลังเมนูหลัก -->
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_main_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. ปุ่มตั้งค่า (ไอคอนเฟืองมุมซ้ายบน) -->
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 3. โลโก้ชื่อเกม Interview Day! (ตรงกลางบน) -->
+    <ImageView
+        android:id="@+id/imgLogoTitle"
+        android:layout_width="380dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_logo_interview_day"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 4. ปุ่มเลือกด่าน (SELECT LEVEL - ปุ่มใหญ่กลาง) -->
+    <ImageButton
+        android:id="@+id/btnSelectLevel"
+        android:layout_width="295dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_select_level"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoTitle" />
+
+    <!-- 5. ปุ่มวิธีเล่น (HOW TO PLAY - ล่างซ้าย) -->
+    <ImageButton
+        android:id="@+id/btnHowToPlay"
+        android:layout_width="111dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_how_to_play"
+        app:layout_constraintEnd_toStartOf="@id/btnNotes"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/btnSelectLevel"
+        app:layout_constraintTop_toBottomOf="@id/btnSelectLevel" />
+
+    <!-- 6. ปุ่มสมุดโน้ต (NOTES - ล่างขวา) -->
+    <ImageButton
+        android:id="@+id/btnNotes"
+        android:layout_width="117dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_notes"
+        app:layout_constraintBottom_toBottomOf="@id/btnHowToPlay"
+        app:layout_constraintEnd_toEndOf="@id/btnSelectLevel"
+        app:layout_constraintStart_toEndOf="@id/btnHowToPlay"
+        app:layout_constraintTop_toTopOf="@id/btnHowToPlay"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
