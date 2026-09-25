@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1. ภาพพื้นหลัง (Background) -->
+    <ImageView
+        android:id="@+id/imgEndingBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_ending_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. กลุ่มกล่องข้อความ และ โลโก้ชื่อฉากจบ -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDialogueContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 2.1 ภาพกล่องสำหรับใส่ข้อความ -->
+        <ImageView
+            android:id="@+id/imgDialogueBg"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_dialogue_box"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 2.2 ข้อความรายละเอียดฉากจบ -->
+        <TextView
+            android:id="@+id/tvEndingDescription"
+            android:layout_width="402dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="4dp"
+            android:text="คุณนั่งรอผลการสัมภาษณ์งานอยู่ที่โต๊ะทำงานของตัวเอง และมี HR โทรมาบอกว่าผ่านการสัมภาษณ์ ทำให้คุณโล่งใจและดีใจมาก"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imgDialogueBg"
+            app:layout_constraintEnd_toEndOf="@id/imgDialogueBg"
+            app:layout_constraintStart_toStartOf="@id/imgDialogueBg"
+            app:layout_constraintTop_toTopOf="@id/imgDialogueBg" />
+
+        <!-- 2.3 โลโก้ชื่อฉากจบ (ซ้ายบน: ใช้สำหรับ Normal & Special Ending) -->
+
+        <!-- 2.4 โลโก้ชื่อฉากจบ (ขวาบน: ใช้สำหรับ Failed Ending) -->
+        <ImageView
+            android:id="@+id/imgLogoRight"
+            android:layout_width="160dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="-35dp"
+            android:layout_marginEnd="-20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_logo_failed"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/imgDialogueBg"
+            app:layout_constraintTop_toTopOf="@id/imgDialogueBg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 3. กลุ่มปุ่มกดสำหรับ Failed Ending (มุมซ้ายล่าง) -->
+    <LinearLayout
+        android:id="@+id/layoutFailedButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnMainMenu"
+            android:layout_width="140dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_main_menu" />
+
+        <ImageButton
+            android:id="@+id/btnRestart"
+            android:layout_width="140dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_restart" />
+    </LinearLayout>
+
+    <!-- 4. ปุ่มถัดไป Next สำหรับ Normal & Special Ending (มุมขวาล่าง) -->
+    <ImageButton
+        android:id="@+id/btnNext"
+        android:layout_width="56dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgLogoLeft"
+        android:layout_width="160dp"
+        android:layout_height="75dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_logo_normal"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

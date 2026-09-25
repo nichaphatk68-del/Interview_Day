@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="440dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_dialog_card"
+    android:padding="24dp">
+
+    <!-- แถวที่ 1: เสียงเอฟเฟกต์ (SFX) -->
+    <ImageButton
+        android:id="@+id/btnSfxOn"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_sfx_on"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnSfxOff"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_sfx_off"
+        app:layout_constraintStart_toEndOf="@id/btnSfxOn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekbarSfx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:max="100"
+        android:progress="80"
+        app:layout_constraintBottom_toBottomOf="@id/btnSfxOn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnSfxOff"
+        app:layout_constraintTop_toTopOf="@id/btnSfxOn" />
+
+    <!-- แถวที่ 2: เพลงประกอบ (BGM) -->
+    <ImageButton
+        android:id="@+id/btnBgmOn"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_bgm_on"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSfxOn" />
+
+    <ImageButton
+        android:id="@+id/btnBgmOff"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_bgm_off"
+        app:layout_constraintStart_toEndOf="@id/btnBgmOn"
+        app:layout_constraintTop_toTopOf="@id/btnBgmOn" />
+
+    <SeekBar
+        android:id="@+id/seekbarBgm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:max="100"
+        android:progress="50"
+        app:layout_constraintBottom_toBottomOf="@id/btnBgmOn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBgmOff"
+        app:layout_constraintTop_toTopOf="@id/btnBgmOn" />
+
+    <!-- แถวปุ่มล่าง: CANCEL & OK -->
+    <ImageButton
+        android:id="@+id/btnCancel"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_cancel"
+        app:layout_constraintEnd_toStartOf="@id/btnOk"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBgmOn" />
+
+    <ImageButton
+        android:id="@+id/btnOk"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_ok"
+        app:layout_constraintBottom_toBottomOf="@id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnCancel"
+        app:layout_constraintTop_toTopOf="@id/btnCancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

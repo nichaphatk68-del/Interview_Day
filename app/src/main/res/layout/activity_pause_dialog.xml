@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="440dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_dialog_card"
+    android:padding="28dp">
+
+    <!-- 1. ป้ายแสดงเวลา (รูปนาฬิกา + กรอบแคปซูลเป็นรูปเดียวกัน) -->
+    <ImageView
+        android:id="@+id/imgTimerCapsule"
+        android:layout_width="180dp"
+        android:layout_height="52dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bg_timer_capsule"
+        tools:src="@drawable/bg_timer_capsule"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ตัวเลขเวลา วางซ้อนบนรูปป้าย (เว้น paddingStart หลบหัวนาฬิกาด้านซ้าย) -->
+    <TextView
+        android:id="@+id/tvRemainingTime"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingStart="36dp"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgTimerCapsule"
+        app:layout_constraintEnd_toEndOf="@id/imgTimerCapsule"
+        app:layout_constraintStart_toStartOf="@id/imgTimerCapsule"
+        app:layout_constraintTop_toTopOf="@id/imgTimerCapsule" />
+
+    <!-- 2. ปุ่ม CONTINUE -->
+    <ImageButton
+        android:id="@+id/btnContinue"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 3. ปุ่ม SETTINGS (เฟือง) -->
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgTimerCapsule" />
+
+    <!-- 4. ปุ่ม HOME (บ้าน) -->
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_home"
+        app:layout_constraintBottom_toBottomOf="@id/btnSettings"
+        app:layout_constraintStart_toEndOf="@id/btnSettings"
+        app:layout_constraintTop_toTopOf="@id/btnSettings" />
+
+    <!-- 5. ปุ่ม RESTART -->
+    <ImageButton
+        android:id="@+id/btnRestart"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_restart"
+        app:layout_constraintBottom_toBottomOf="@id/btnSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnSettings" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
