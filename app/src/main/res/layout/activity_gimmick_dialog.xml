@@ -60,6 +60,7 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
+                <!-- ปุ่มฟังเสียง (ic_speaker.png) -->
                 <LinearLayout
                     android:id="@+id/btnListen"
                     android:layout_width="wrap_content"
@@ -131,6 +132,7 @@
                         android:textSize="13sp"
                         android:textStyle="bold" />
 
+                    <!-- ปุ่มลูกศรถัดไป สำหรับข้อ 1 และ ข้อ 2 (ic_next_arrow.png) -->
                     <ImageButton
                         android:id="@+id/btnNextInside"
                         android:layout_width="36dp"
