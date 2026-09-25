@@ -8,7 +8,7 @@ public class Level1 extends Level {
     private String vocabularyTopic;
 
     public Level1() {
-        super(1, "ห้องสมุดแห่งความรู้");
+        super(1, "ห้องนอนสุดรก");
         this.vocabularyTopic = "OOP Concepts";
     }
 

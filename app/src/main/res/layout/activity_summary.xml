@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4EFFA"
+    tools:context=".activities.SummaryActivity">
+
+    <!-- 1. ภาพพื้นหลังหลัก -->
+    <ImageView
+        android:id="@+id/imgSummaryBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_summary"
+        tools:src="@drawable/bg_summary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. ป้าย Summary ด้านบนสุด -->
+    <ImageView
+        android:id="@+id/imgHeaderSummary"
+        android:layout_width="320dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_summary_header"
+        tools:src="@drawable/ic_summary_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 3. การ์ดหลักแสดงผลเวลา (Main Card) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardSummaryContainer"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/bg_summary_card"
+        android:paddingStart="36dp"
+        android:paddingTop="36dp"
+        android:paddingEnd="36dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgHeaderSummary">
+
+        <!-- กล่องแสดงเวลาสีเทาด้านใน -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/boxTimeDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_inner_time_box"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- ป้าย TOTAL TIME -->
+            <ImageView
+                android:id="@+id/imgTotalTimeBadge"
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_total_time_badge"
+                tools:src="@drawable/ic_total_time_badge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- รายการเวลาแต่ละด่าน -->
+            <LinearLayout
+                android:id="@+id/layoutLevelTimes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgTotalTimeBadge"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvLevel1Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="LEVEL1 :   03:56" />
+
+                <TextView
+                    android:id="@+id/tvLevel2Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="LEVEL2 :   05:49" />
+
+                <TextView
+                    android:id="@+id/tvLevel3Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="LEVEL3 :   04:09" />
+
+            </LinearLayout>
+
+            <!-- ตัวเลขเวลารวมทั้งหมด -->
+            <TextView
+                android:id="@+id/tvTotalTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="14:47" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- ปุ่ม MAIN MENU -->
+        <ImageButton
+            android:id="@+id/btnMainMenu"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_main_menu"
+            tools:src="@drawable/btn_main_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/boxTimeDetails" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 4. ป้ายรูปแบบฉากจบ (Normal / Special Ending) วางทับขอบบนของการ์ดหลัก -->
+    <ImageView
+        android:id="@+id/imgEndingTypeBadge"
+        android:layout_width="210dp"
+        android:layout_height="68dp"
+        android:elevation="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_normal_ending_badge"
+        app:layout_constraintBottom_toTopOf="@id/cardSummaryContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cardSummaryContainer"
+        tools:src="@drawable/ic_normal_ending_badge" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

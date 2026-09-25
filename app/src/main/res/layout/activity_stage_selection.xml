@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1. ภาพพื้นหลังฉากเมือง -->
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_select_level"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. ป้ายโลโก้ SELECT LEVEL (ตรงกลางด้านบน) -->
+    <ImageView
+        android:id="@+id/imgLogoSelectLevel"
+        android:layout_width="508dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_logo_select_level"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 3. ปุ่ม Level 1 (ซ้าย) -->
+    <ImageButton
+        android:id="@+id/btnLevel1"
+        android:layout_width="160dp"
+        android:layout_height="85dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_level_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnLevel2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoSelectLevel"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <!-- 4. ปุ่ม Level 2 (กลาง - Default รูป LOCKED) -->
+    <ImageButton
+        android:id="@+id/btnLevel2"
+        android:layout_width="160dp"
+        android:layout_height="85dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_level_locked"
+        app:layout_constraintBottom_toBottomOf="@id/btnLevel1"
+        app:layout_constraintEnd_toStartOf="@id/btnLevel3"
+        app:layout_constraintStart_toEndOf="@id/btnLevel1"
+        app:layout_constraintTop_toTopOf="@id/btnLevel1" />
+
+    <!-- 5. ปุ่ม Level 3 (ขวา - Default รูป LOCKED) -->
+    <ImageButton
+        android:id="@+id/btnLevel3"
+        android:layout_width="160dp"
+        android:layout_height="85dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_level_locked"
+        app:layout_constraintBottom_toBottomOf="@id/btnLevel1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnLevel2"
+        app:layout_constraintTop_toTopOf="@id/btnLevel1" />
+
+    <!-- 6. ปุ่มกลับหน้าโฮม (ไอคอนบ้าน มุมซ้ายล่าง) -->
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="86dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
